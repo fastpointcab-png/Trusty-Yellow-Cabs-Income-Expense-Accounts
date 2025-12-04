@@ -1,6 +1,6 @@
 {
   "name": "Trusty Fleet",
-  "short_name": "TaxiTracker",
+  "short_name": "Trusty Fleet",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#111827",
