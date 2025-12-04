@@ -97,7 +97,14 @@ const EntryForm: React.FC<EntryFormProps> = ({ initialData, onSave, onCancel }) 
             </div>
             <div>
               <label className="block text-sm font-medium text-gray-700 dark:text-gray-300">Total KM</label>
-              <input type="number" step="0.1" name="total_km" value={formData.total_km} onChange={handleChange} className="mt-1 block w-full rounded-md border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white shadow-sm focus:border-taxi-500 focus:ring-taxi-500 p-2 border" />
+<input
+  type="number"
+  step="0.1"
+  name="total_km"
+  value={formData.total_km !== 0 ? formData.total_km : ''}
+  onChange={handleChange}
+  className="mt-1 block w-full rounded-md border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white shadow-sm focus:border-taxi-500 focus:ring-taxi-500 p-2 border"
+/>
             </div>
           </div>
 
@@ -108,33 +115,74 @@ const EntryForm: React.FC<EntryFormProps> = ({ initialData, onSave, onCancel }) 
             <div className="space-y-4">
                <h3 className="text-lg font-medium text-green-600 dark:text-green-400">Income</h3>
                <div>
-                <label className="block text-sm font-medium text-gray-700 dark:text-gray-300">Total Income Amount</label>
-                <div className="relative mt-1">
-                  <span className="absolute inset-y-0 left-0 pl-3 flex items-center text-gray-500">₹</span>
-                  <input required type="number" step="0.01" name="income_amount" value={formData.income_amount} onChange={handleChange} className="block w-full pl-7 rounded-md border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white shadow-sm focus:border-green-500 focus:ring-green-500 p-2 border text-lg font-semibold" />
-                </div>
+              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300">Total Income Amount</label>
+<div className="relative mt-1">
+  <span className="absolute inset-y-0 left-0 pl-3 flex items-center text-gray-500">₹</span>
+  <input
+    required
+    type="number"
+    step="0.01"
+    name="income_amount"
+    value={formData.income_amount !== 0 ? formData.income_amount : ''}
+    onChange={handleChange}
+    className="block w-full pl-7 rounded-md border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white shadow-sm focus:border-green-500 focus:ring-green-500 p-2 border text-lg font-semibold"
+  />
+</div>
+
               </div>
             </div>
 
             <div className="space-y-4">
               <h3 className="text-lg font-medium text-red-600 dark:text-red-400">Expenses</h3>
               <div className="grid grid-cols-2 gap-3">
-                 <div>
-                    <label className="block text-xs font-medium text-gray-500 dark:text-gray-400">Fuel</label>
-                    <input type="number" step="0.01" name="fuel_expense" value={formData.fuel_expense} onChange={handleChange} className="mt-1 block w-full rounded-md border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white p-2 border" />
-                 </div>
-                 <div>
-                    <label className="block text-xs font-medium text-gray-500 dark:text-gray-400">Maintenance</label>
-                    <input type="number" step="0.01" name="maintenance_expense" value={formData.maintenance_expense} onChange={handleChange} className="mt-1 block w-full rounded-md border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white p-2 border" />
-                 </div>
-                 <div>
-                    <label className="block text-xs font-medium text-gray-500 dark:text-gray-400">Salary</label>
-                    <input type="number" step="0.01" name="driver_salary" value={formData.driver_salary} onChange={handleChange} className="mt-1 block w-full rounded-md border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white p-2 border" />
-                 </div>
-                 <div>
-                    <label className="block text-xs font-medium text-gray-500 dark:text-gray-400">Other</label>
-                    <input type="number" step="0.01" name="other_expense" value={formData.other_expense} onChange={handleChange} className="mt-1 block w-full rounded-md border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white p-2 border" />
-                 </div>
+                <div>
+  <label className="block text-xs font-medium text-gray-500 dark:text-gray-400">Fuel</label>
+  <input
+    type="number"
+    step="0.01"
+    name="fuel_expense"
+    value={formData.fuel_expense !== 0 ? formData.fuel_expense : ''}
+    onChange={handleChange}
+    className="mt-1 block w-full rounded-md border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white p-2 border"
+  />
+</div>
+
+<div>
+  <label className="block text-xs font-medium text-gray-500 dark:text-gray-400">Maintenance</label>
+  <input
+    type="number"
+    step="0.01"
+    name="maintenance_expense"
+    value={formData.maintenance_expense !== 0 ? formData.maintenance_expense : ''}
+    onChange={handleChange}
+    className="mt-1 block w-full rounded-md border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white p-2 border"
+  />
+</div>
+
+<div>
+  <label className="block text-xs font-medium text-gray-500 dark:text-gray-400">Salary</label>
+  <input
+    type="number"
+    step="0.01"
+    name="driver_salary"
+    value={formData.driver_salary !== 0 ? formData.driver_salary : ''}
+    onChange={handleChange}
+    className="mt-1 block w-full rounded-md border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white p-2 border"
+  />
+</div>
+
+<div>
+  <label className="block text-xs font-medium text-gray-500 dark:text-gray-400">Other</label>
+  <input
+    type="number"
+    step="0.01"
+    name="other_expense"
+    value={formData.other_expense !== 0 ? formData.other_expense : ''}
+    onChange={handleChange}
+    className="mt-1 block w-full rounded-md border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white p-2 border"
+  />
+</div>
+
               </div>
             </div>
           </div>
