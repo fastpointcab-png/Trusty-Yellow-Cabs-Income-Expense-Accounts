@@ -24,7 +24,7 @@ const Login: React.FC<LoginProps> = ({ onLogin }) => {
     <div className="min-h-screen bg-gray-100 dark:bg-gray-900 flex flex-col items-center justify-center p-4">
       <div className="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-xl w-full max-w-md">
         <div className="flex justify-center mb-6 text-taxi-500">
-           <CarTaxiFront size={64} />
+        
         </div>
         <h1 className="text-2xl font-bold text-center mb-2 dark:text-white">Trusty Yellow Cabs Accounts</h1>
         <p className="text-gray-500 dark:text-gray-400 text-center mb-8">Owner Access</p>
